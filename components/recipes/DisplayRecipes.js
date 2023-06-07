@@ -43,7 +43,7 @@ export default function DisplayRecipes({ recipes }) {
 
           <Link
             className="p-1 transition border-2 border-gray-500 rounded-lg w-fit hover:scale-105 hover:border-blue-500"
-            href={`/recipes/${recipe.slug}`}
+            href={`/recipe/${recipe.slug}`}
             key={recipe._id}
           >
             {recipe.title}
