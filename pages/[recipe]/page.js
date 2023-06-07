@@ -1,3 +1,4 @@
+import { ResponsiveH2 } from "@/components/Utilities/ResponsiveText";
 import { getRecipe } from "@/sanity-utils";
 import { PortableText } from "@portabletext/react";
 
