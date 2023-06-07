@@ -15,3 +15,19 @@ export default async function getRecipes() {
   }`
   );
 }
+
+export async function getRecipe(slug) {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "recipe" && slug.current == $slug][0] {
+    _id,
+    _createdAt,
+    title,
+    description,
+    ingredients,
+    instructions,
+    "slug": slug.current,
+    content,
+  }`,
+    { slug }
+  );
+}

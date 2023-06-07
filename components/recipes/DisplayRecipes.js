@@ -2,9 +2,9 @@ import ResponsiveH1, {
   ResponsiveH2,
   ResponsiveP,
 } from "@/components/Utilities/ResponsiveText";
-
-import getRecipes from "@/sanity-utils";
 import { PortableText } from "@portabletext/react";
+import NormalButton from "../base components/Buttons";
+import Link from "next/link";
 
 export default function DisplayRecipes({ recipes }) {
   return (
@@ -41,9 +41,18 @@ export default function DisplayRecipes({ recipes }) {
             </div>
           </div>
 
+          <Link
+            className="p-1 transition border-2 border-gray-500 rounded-lg w-fit hover:scale-105 hover:border-blue-500"
+            href={`/recipes/${recipe.slug}`}
+            key={recipe._id}
+          >
+            {recipe.title}
+          </Link>
+
           <PortableText value={recipe.content} />
         </div>
       ))}
     </div>
   );
 }
+
