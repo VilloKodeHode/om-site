@@ -39,10 +39,21 @@ export default function Page({ recipe }) {
   );
 }
 
+// export async function getServerSideProps({ params }) {
+//   const { slug } = params;
+//   console.log("Slug:", slug);
+//   const recipe = await getRecipe(slug);
+//   return {
+//     props: {
+//       recipe,
+//     },
+//   };
+// }
+
 export async function getServerSideProps({ params }) {
-  const { slug } = params;
-  console.log("Slug:", slug);
-  const recipe = await getRecipe(slug);
+  const { recipeId } = params; // Updated parameter name to recipeId
+  console.log("Recipe ID:", recipeId);
+  const recipe = await getRecipe(recipeId);
   return {
     props: {
       recipe,
