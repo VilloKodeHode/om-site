@@ -1,41 +1,53 @@
-import { ResponsiveH2 } from "@/components/Utilities/ResponsiveText";
+import ResponsiveH1, {
+  ResponsiveH2,
+} from "@/components/Utilities/ResponsiveText";
 import { getRecipe } from "@/sanity-utils";
 import { PortableText } from "@portabletext/react";
+import Image from "next/image";
 
 export default function Page({ recipe }) {
   return (
-    <div>
-      <h1 className="font-extrabold text-transparent bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-7xl">
+    <section className="grid gap-8">
+      <ResponsiveH1 className="font-extrabold text-center text-transparent bg-gradient-to-r from-OM-primary via-OM-secondary to-OM-tertiary bg-clip-text text-md">
         {recipe.title}
-      </h1>
-      <div className="mt-10 text-lg text-gray-700">
+      </ResponsiveH1>
+      <div className="text-lg text-gray-700">
         <PortableText value={recipe.content} />
       </div>
-      <div className="grid gap-4">
-        <ResponsiveH2 className="">Ingredients</ResponsiveH2>
-        <div className="px-8 py-4 bg-gray-100 border border-gray-700 rounded-xl w-fit">
-          <ul>
+      <div className="flex flex-col mx-auto md:flex-row md:rounded-r-xl md:min-w-[80%] md:rounded-t-none rounded-t-xl">
+        <div className="p-8 md:w-1/2 bg-OM-secondary bg-opacity-30 md:rounded-bl-xl">
+          <h2 className="mb-4 text-2xl font-bold">Ingredients</h2>
+          <ul className="list-disc list-inside">
             {recipe.ingredients.map((ingredient) => (
-              <li className="list-disc" key={ingredient}>
+              <li className="text-h5" key={ingredient}>
                 {ingredient}
               </li>
             ))}
           </ul>
         </div>
+        <div className="md:w-1/2">
+          <Image
+            src={recipe.image}
+            alt={recipe.alt}
+            width={300}
+            height={200}
+            className="object-cover md:rounded-br-xl md:rounded-b-none rounded-b-xl"
+          />
+        </div>
       </div>
-      <div className="grid gap-4">
-        <ResponsiveH2 className="">Instructions</ResponsiveH2>
-        <div className="px-8 py-4 bg-gray-100 border border-gray-700 rounded-xl w-fit">
-          <ul>
+      <div className="flex mx-auto items-center justify-center md:rounded-r-xl md:min-w-[80%] md:rounded-t-none rounded-t-xl">
+        <div className="p-8 md:w-1/2 bg-OM-secondary bg-opacity-30 rounded-b-xl">
+          <h2 className="mb-4 text-2xl font-bold">Instructions</h2>
+          <ol className="list-disc list-inside">
             {recipe.instructions.map((instruction) => (
-              <li className="list-disc" key={instruction}>
+              <li className="list-decimal text-h5" key={instruction}>
                 {instruction}
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -51,7 +63,7 @@ export default function Page({ recipe }) {
 // }
 
 export async function getServerSideProps({ params }) {
-  const { recipeId } = params; // Updated parameter name to recipeId
+  const { recipeId } = params;
   console.log("Recipe ID:", recipeId);
   const recipe = await getRecipe(recipeId);
   return {

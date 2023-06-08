@@ -8,12 +8,20 @@ export default async function getRecipes() {
     _createdAt,
     title,
     description,
-    ingredients,
-    instructions,
+    "image": image.asset->url,
     "slug": slug.current,
     content,
   }`
   );
+}
+
+export async function getServerSideProps() {
+  const recipes = await getRecipes();
+  return {
+    props: {
+      recipes,
+    },
+  };
 }
 
 export async function getRecipe(slug) {
@@ -26,8 +34,21 @@ export async function getRecipe(slug) {
     ingredients,
     instructions,
     "slug": slug.current,
+    "image": image.asset->url,
+    alt,
     content,
   }`,
     { slug }
+  );
+}
+
+export async function getLinks() {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "recipe"] {
+    _id,
+    title,
+    "slug": slug.current,
+    
+  }`
   );
 }

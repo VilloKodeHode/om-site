@@ -26,7 +26,7 @@ export function ResponsiveHeaderH1({ children, className }) {
 
 export function ResponsiveH2({ children, className }) {
   return (
-    <h2 className={`sm:leading-h2 leading-h3 sm:text-h2 text-h3 ${className}`}>
+    <h2 className={`lg:leading-h2 leading-h3 lg:text-h2 text-h3 ${className}`}>
       {children}
     </h2>
   );

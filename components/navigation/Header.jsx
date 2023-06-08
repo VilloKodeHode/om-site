@@ -8,6 +8,7 @@ import ChakraDrawer from "./ChakraDrawer";
 import { ChakraProvider, useDisclosure } from "@chakra-ui/react";
 import Navbar from "./Navbar";
 
+
 export default function Header() {
   const [activeLink, setActiveLink] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -58,3 +59,4 @@ export default function Header() {
     </>
   );
 }
+

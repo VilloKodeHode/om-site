@@ -27,11 +27,11 @@ module.exports = {
     extend: {
       colors: {
         OM: {
-          primary: "#13b096",
+          primary: "#50b68e",
 
-          secondary: "#c97286",
+          secondary: "#78d0ad",
 
-          tertiary: "#7fc5b0",
+          tertiary: "#374548",
 
           //font colors:
           black: "#37342e",

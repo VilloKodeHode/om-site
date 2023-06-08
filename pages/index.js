@@ -1,13 +1,17 @@
+import ResponsiveH1 from "@/components/Utilities/ResponsiveText";
+import RecipeNav from "@/components/navigation/recipeNav";
 import DisplayRecipes from "@/components/recipes/DisplayRecipes";
 import getRecipes from "@/sanity-utils";
 
-
 export default function Home({ recipes }) {
   return (
-    <div className="grid gap-8">
-      <h1 className="text-4xl font-bold">Home</h1>
-      <DisplayRecipes recipes={recipes} />
-    </div>
+    <>
+      <div className="grid justify-center gap-8">
+        <ResponsiveH1 className="">Welcome to my foodblog!</ResponsiveH1>
+        <RecipeNav recipes={recipes} />
+        <DisplayRecipes recipes={recipes} />
+      </div>
+    </>
   );
 }
 

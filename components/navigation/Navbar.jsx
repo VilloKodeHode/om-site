@@ -1,12 +1,15 @@
 import { useContext } from "react";
 import NavItem from "./NavItem";
 import MENU_LIST from "./menu_list";
+import Link from "next/link";
+import getRecipes from "@/sanity-utils";
 
 export default function Navbar({
   activeLink,
   setActiveLink,
   onClose,
   className,
+  recipes,
 }) {
   return (
     <div className={`flex items-center w-[800px] ${className}`}>
@@ -32,3 +35,4 @@ export default function Navbar({
     </div>
   );
 }
+
