@@ -1,4 +1,4 @@
-import ResponsiveH1 from "@/components/Utilities/ResponsiveText";
+import TitleHeader from "@/components/Utilities/ResponsiveText";
 import RecipeNav from "@/components/navigation/recipeNav";
 import DisplayRecipes from "@/components/recipes/DisplayRecipes";
 import getRecipes from "@/sanity-utils";
@@ -7,7 +7,7 @@ export default function Home({ recipes }) {
   return (
     <>
       <div className="grid justify-center gap-8">
-        <ResponsiveH1 className="">Welcome to my foodblog!</ResponsiveH1>
+        <TitleHeader heading="h1">Welcome to my foodblog!</TitleHeader>
         <RecipeNav recipes={recipes} />
         <DisplayRecipes recipes={recipes} />
       </div>

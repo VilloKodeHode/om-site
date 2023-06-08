@@ -32,6 +32,7 @@ export async function getRecipe(slug) {
     title,
     description,
     ingredients,
+    tools,
     instructions,
     "slug": slug.current,
     "image": image.asset->url,

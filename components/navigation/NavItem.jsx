@@ -15,14 +15,14 @@ const NavItem = ({
   return (
     <div key={text} className={`relative z-10 p-5 ${className}`}>
       <Link href={href} className="">
-        <p
+        <li
           className={`${textSize} ${textColor} ${
             active || activeLink === text ? `border-b-2` : "hover:underline"
           } z-10 border-black duration-150`}
           onClick={onClick}
         >
           {text}
-        </p>
+        </li>
       </Link>
       {(active || activeLink === text) && (
         <div className="absolute w-8 h-8 -translate-y-1/2 top-1/2 -left-3">

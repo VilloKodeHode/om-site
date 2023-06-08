@@ -25,6 +25,16 @@ export default function Page({ recipe }) {
             ))}
           </ul>
         </div>
+        {/* <div className="p-8 md:w-1/2 bg-OM-secondary bg-opacity-30 md:rounded-bl-xl">
+          <h2 className="mb-4 text-2xl font-bold">Tools</h2>
+          <ul className="list-disc list-inside">
+            {recipe.tools.map((tool) => (
+              <li className="text-h5" key={tool}>
+                {tool}
+              </li>
+            ))}
+          </ul>
+        </div> */}
         <div className="md:w-1/2">
           <Image
             src={recipe.image}
