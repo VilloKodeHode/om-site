@@ -8,7 +8,7 @@ export default function Home({ recipes }) {
   return (
     <>
       <Head>
-        <title>Kjælevenner</title>
+        <title>Olas Matlaging</title>
         <meta
           name="description"
           content="Mockup foodblog made with next+sanity"
