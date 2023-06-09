@@ -18,7 +18,7 @@ const NavItem = ({
         <li
           className={`${textSize} ${textColor} ${
             active || activeLink === text ? `border-b-2` : "hover:underline"
-          } z-10 border-black duration-150`}
+          } z-10 border-black duration-150 list-none`}
           onClick={onClick}
         >
           {text}

@@ -1,5 +1,4 @@
 import Header from "@/components/navigation/Header";
-import getRecipes from "@/sanity-utils";
 import "@/styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Figtree } from "next/font/google";
@@ -21,4 +20,3 @@ export default function App({ Component, pageProps }) {
     </>
   );
 }
-

@@ -1,13 +1,13 @@
-import ResponsiveH1, {
-  ResponsiveP,
-} from "@/components/Utilities/ResponsiveText";
+import TitleHeader, { Paragraph } from "@/components/Utilities/ResponsiveText";
 import Image from "next/image";
 
 export default function About() {
   return (
     <>
       <div className="flex flex-col items-center justify-center gap-8 mx-auto">
-        <ResponsiveH1 className="text-center">About me</ResponsiveH1>
+        <TitleHeader heading="h1" className="text-center">
+          About me
+        </TitleHeader>
         <div className="transition border-8 rounded-b-full border-OM-tertiary bg-gradient-to-r from-OM-primary to-OM-secondary">
           <div className="border border-b-0 rounded-full border-OM-tertiary">
             <Image
@@ -19,14 +19,14 @@ export default function About() {
             />
           </div>
         </div>
-        <ResponsiveP>
+        <Paragraph>
           Welcome to my about page, fellow food enthusiasts! I&apos;m Chef Ola,
           and let me take you on a culinary journey like no other. Buckle up,
           because my story is seasoned with extraordinary cooking feats,
           sprinkled with delicious ingredients, and garnished with a pinch of
           humor.
-        </ResponsiveP>
-        <ResponsiveP>
+        </Paragraph>
+        <Paragraph>
           Once upon a time, I set out on a quest to conquer the culinary world.
           I sautéed through Michelin-starred kitchens, danced with flaming pans,
           and tangoed with exotic spices. I was the fearless maestro of the
@@ -37,8 +37,8 @@ export default function About() {
           through the cozy walls of a home kitchen. So, I bid adieu to the
           glittering limelight and embarked on a new chapter as the ultimate
           home chef extraordinaire.
-        </ResponsiveP>
-        <ResponsiveP>
+        </Paragraph>
+        <Paragraph>
           No longer wearing chef hats adorned with stars, I slipped into a comfy
           apron and embraced the warmth of domesticity. From flamboyant culinary
           creations to whipping up comfort food delights, I now work my magic in
@@ -48,8 +48,8 @@ export default function About() {
           ones gathered around the table. I may have traded the stage for the
           intimacy of a home kitchen, but my passion for food remains as fiery
           as ever.
-        </ResponsiveP>
-        <ResponsiveP>
+        </Paragraph>
+        <Paragraph>
           As a home chef, I bring the culinary world to your doorstep,
           transforming everyday ingredients into extraordinary culinary
           experiences. So, whether you&apos;re craving a perfectly seared steak
@@ -60,7 +60,7 @@ export default function About() {
           magic of home cooking, one delicious bite at a time. Together,
           we&apos;ll create culinary memories that will last a lifetime. Bon
           appétit and let the adventures begin!
-        </ResponsiveP>
+        </Paragraph>
       </div>
     </>
   );
